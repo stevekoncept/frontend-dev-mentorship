@@ -173,7 +173,7 @@ a {
   background: var(--white-color);
   border: 0.5px solid var(--border);
   border-radius: var(--radius);
-  padding: 1rem 1.1rem;
+  padding: 0.8rem 1.1rem;
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -368,6 +368,10 @@ footer {
   color: var(--muted);
 }
 
+.amount{
+    font-weight: bold;
+    color: var(--accent);
+}
 /* ─── Responsive ─────────────────────────── */
 @media (max-width: 480px) {
   .container {
