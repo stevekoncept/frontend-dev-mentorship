@@ -549,8 +549,19 @@
               margin-bottom: 12px;
               outline: none;
             "
+            required
           />
-
+          <p
+            class="alert-wrd"
+            style="
+              color: red;
+              margin-bottom: 12px;
+              font-size: 13px;
+              display: none;
+            "
+          >
+            Please enter your full name
+          </p>
           <button
             onclick="goWhatsApp()"
             style="
@@ -613,6 +624,7 @@
           popup.style.transform = "translateY(0)";
           popup.style.opacity = "1";
         }, 10);
+        document.body.classList.add("no-scroll");
       }
 
       function closePopup() {
@@ -624,6 +636,7 @@
           overlay.style.display = "none";
           goStep1();
         }, 300);
+        document.body.classList.remove("no-scroll");
       }
 
       function goStep2() {
@@ -634,6 +647,9 @@
       function goStep1() {
         document.getElementById("step2").style.display = "none";
         document.getElementById("step1").style.display = "block";
+        alertwrd.style.display = "none";
+        userName.style.marginBottom = "12px";
+        userName.value = "";
       }
 
       function copyAcct() {
@@ -645,11 +661,18 @@
         }, 2000);
       }
 
+      const alertwrd = document.querySelector(".alert-wrd");
+
       function goWhatsApp() {
         var name = document.getElementById("userName").value.trim();
         if (!name) {
-          alert("Please enter your name.");
+          userName.style.marginBottom = "0";
+          alertwrd.style.display = "block";
           return;
+        } else {
+          alertwrd.style.display = "none";
+          userName.style.marginBottom = "12px";
+          userName.value = "";
         }
         var msg = encodeURIComponent(
           "Hi, I'm " +

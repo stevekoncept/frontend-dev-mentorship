@@ -54,7 +54,10 @@ a {
   margin: 0 auto;
   padding: 0 1.5rem;
 }
-
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
 .divider {
   height: 0.5px;
   background: var(--border);
@@ -368,9 +371,9 @@ footer {
   color: var(--muted);
 }
 
-.amount{
-    font-weight: bold;
-    color: var(--accent);
+.amount {
+  font-weight: bold;
+  color: var(--accent);
 }
 /* ─── Responsive ─────────────────────────── */
 @media (max-width: 480px) {
